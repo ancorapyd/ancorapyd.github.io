@@ -5,3 +5,4 @@
 @media(max-width:380px){.hero h1{font-size:39px}}
 .logo{display:flex;align-items:center;height:100%}.logo img{width:138px;height:58px;object-fit:contain;object-position:left center} @media(max-width:760px){.logo img{width:115px;height:50px}}
 .pane{position:relative;overflow:hidden;padding:0;background:#dfe9e9}.pane img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.pane:hover img{transform:scale(1.035)}.pane span{position:absolute;left:18px;bottom:18px;background:#f8faf9e8;border:1px solid #ffffff99;padding:9px 12px;color:var(--ink);font-weight:600;backdrop-filter:blur(6px)}
+.heritage .glass-photo{margin:28px 0 0}.glass-photo img{display:block;height:480px;width:auto;max-width:100%;border:1px solid var(--line);background:#fff;padding:8px;box-shadow:0 18px 40px #16363714}@media(max-width:760px){.glass-photo img{height:420px}.heritage .glass-photo{margin:28px auto 0;width:max-content}}
