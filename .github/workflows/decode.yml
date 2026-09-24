@@ -1,0 +1,23 @@
+name: decode-assets
+on:
+  push:
+    paths:
+      - 'assets/*.b64'
+      - '.github/workflows/decode.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode
+        run: |
+          shopt -s nullglob
+          for f in assets/*.b64; do base64 -d "$f" > "${f%.b64}"; git rm -q "$f"; done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || git commit -m "Decode image assets"
+          git push
